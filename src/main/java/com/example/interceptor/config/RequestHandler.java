@@ -27,4 +27,9 @@ public class RequestHandler extends HandlerInterceptorAdapter {
     public void afterCompletion (HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         log.info("After"+request.getRequestURI()+" "+request.getMethod());
     }
+
+    @Override
+    public void afterConcurrentHandlingStarted (HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        super.afterConcurrentHandlingStarted(request, response, handler);
+    }
 }
